@@ -2,7 +2,7 @@ import { db } from "@/database/databaseConnection"
 import { Count, Person } from "@/protocols"
 
 async function getById(id: number): Promise<Person> {
-    const person = await db.query<Person>(`SELECT * FROM s WHERE id=$1;`, [id])
+    const person = await db.query<Person>(`SELECT * FROM people WHERE id=$1;`, [id])
     return person.rows[0]
 }
 
